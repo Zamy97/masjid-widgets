@@ -11,8 +11,9 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
-            background-color: #ffffff;
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #1e3a5f, #27496d); /* darker blue gradient */
+            color: white;
         }
 
         .masjid-name-bar {
@@ -20,7 +21,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+            color: #ffffff;
             font-size: 48px;
             font-weight: bold;
             padding: 10px 20px;
@@ -31,7 +33,7 @@
 
         .iframe-container {
             position: absolute;
-            top: 80px; /* Push down below the header */
+            top: 80px;
             left: 50%;
             transform-origin: top left;
             width: 375px;
@@ -57,7 +59,7 @@
 <script>
     const masajid = [
         {
-            name: "Darul Uloom",
+            name: "Darul Uloom Michigan",
             id: "OLnzqQLM",
             scale: 1.7
         },
