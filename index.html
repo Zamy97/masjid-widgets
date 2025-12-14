@@ -16,10 +16,12 @@
             color: white;
         }
 
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
         .masjid-name-bar {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
             color: #ffffff;
@@ -27,15 +29,21 @@
             font-weight: bold;
             padding: 20px 30px;
             text-align: center;
-            z-index: 1000;
             box-sizing: border-box;
+            flex-shrink: 0;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 40px 0;
         }
 
         .iframe-container {
-            position: absolute;
-            top: 80px;
-            left: 50%;
-            transform-origin: top left;
+            transform-origin: center center;
             width: 375px;
             height: 600px;
             transition: transform 0.5s ease-in-out;
@@ -52,8 +60,10 @@
 
 <div class="masjid-name-bar" id="masjidName">Loading...</div>
 
-<div class="iframe-container" id="iframeContainer">
-    <iframe id="masjidIframe" allowtransparency="true"></iframe>
+<div class="content-wrapper">
+    <div class="iframe-container" id="iframeContainer">
+        <iframe id="masjidIframe" allowtransparency="true"></iframe>
+    </div>
 </div>
 
 <script>
@@ -91,7 +101,7 @@
 
         iframe.src = `https://timing.athanplus.com/masjid/widgets/embed?theme=1&masjid_id=${masjid.id}&header=no`;
         name.textContent = masjid.name;
-        container.style.transform = `scale(${masjid.scale}) translate(-50%, 0%)`;
+        container.style.transform = `scale(${masjid.scale})`;
 
         index = (index + 1) % masajid.length;
     }
