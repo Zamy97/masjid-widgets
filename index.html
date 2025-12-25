@@ -20,10 +20,10 @@
             position: absolute;
             bottom: 100%;               /* place it right above the iframe container */
             left: 50%;
-            transform: translate(-50%, 150px); /* move down 8px */
+            transform: translate(-50%, 550px); /* was 150px — 20px lower */
             background: #0b3b60;        /* solid background (not transparent) */
             color: #ffffff;
-            font-size: 95px;            /* smaller so it fits above the iframe */
+            font-size: 18px;            /* smaller so it fits above the iframe */
             font-weight: 700;
             padding: 8px 16px;
             border-radius: 6px;
@@ -43,7 +43,7 @@
         }
 
         iframe {
-            width: 100%;
+            width: 105%;
             height: 100%;
             border: none;
         }
@@ -51,10 +51,10 @@
 </head>
 <body>
 
-<div class="masjid-name-bar" id="masjidName">Loading...</div>
-<div class="iframe-container" id="iframeContainer">
 
+<div class="iframe-container" id="iframeContainer">
     <iframe id="masjidIframe" allowtransparency="true"></iframe>
+    <div class="masjid-name-bar" id="masjidName">Loading...</div>
 </div>
 
 <script>
