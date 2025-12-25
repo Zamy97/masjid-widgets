@@ -18,17 +18,18 @@
 
         .masjid-name-bar {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+            bottom: 100%;               /* place it right above the iframe container */
+            left: 50%;
+            transform: translate(-50%, 25px); /* move down 8px */
+            background: #0b3b60;        /* solid background (not transparent) */
             color: #ffffff;
-            font-size: 70px;
-            font-weight: bold;
-            padding: 20px 30px;
-            text-align: center;
-            z-index: 1000;
-            box-sizing: border-box;
+            font-size: 28px;            /* smaller so it fits above the iframe */
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+            z-index: 1001;
+            white-space: nowrap;
         }
 
         .iframe-container {
@@ -50,9 +51,8 @@
 </head>
 <body>
 
-<div class="masjid-name-bar" id="masjidName">Loading...</div>
-
 <div class="iframe-container" id="iframeContainer">
+    <div class="masjid-name-bar" id="masjidName">Loading...</div>
     <iframe id="masjidIframe" allowtransparency="true"></iframe>
 </div>
 
